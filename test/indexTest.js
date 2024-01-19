@@ -79,3 +79,80 @@ describe('index.js', function () {
     });
   });
 });
+
+
+const cats = ["Milo", "Otis", "Garfield"];
+
+function destructivelyAppendCat() {
+   cats.push("Ralph");
+}
+
+function destructivelyPrependCat() {
+  cats.unshift("Bob");
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+function destructivelyRemoveLastCat() {
+  cats.pop();
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+function destructivelyRemoveFirstCat() {
+  cats.shift();
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+
+function appendCat() {
+  const newCats = [...cats,"Broom"];
+  return newCats;
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+function prependCat() {
+  newArnoldCats = ["Arnold", ...cats];
+  return newArnoldCats;
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+function removeLastCat() {
+  catsLast = cats.slice(0,-1);
+  return catsLast;
+}
+
+beforeEach(function () {
+  cats.length = 0;
+
+  cats.push("Milo", "Otis", "Garfield");
+});
+
+function removeFirstCat() {
+  catsFirst = cats.slice(1);
+  return catsFirst;
+}
+
